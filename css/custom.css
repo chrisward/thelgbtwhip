@@ -1,0 +1,440 @@
+body {
+  background-color: #764299;
+  /* background-image: url(../img/purple_blurry_background-wallpaper-1600x900.jpg);
+  background-position: cover;
+  width: 100%;
+  height: 100%; */
+  padding: 12px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;
+  line-height: 1em;
+  font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;  
+  font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 200;
+  color: rgba(255,255,255,0.28);
+  text-align: center;  
+  margin-bottom: 20px;
+  font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+}
+
+h4 {
+  font-size: 74px;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;
+  line-height: 1em;  
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+}
+
+a {
+  color: #fff;
+  font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
+a:hover {
+  color: #a9a9a9;
+}
+
+.center {
+  text-align: center;
+}
+
+.white {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.group {
+  background-color: #fff;
+  color: #000;
+  border-radius: 99px;
+}
+
+.margin {
+  margin-right: 10px;
+}
+
+.headshot {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  max-height: 118px;
+  max-width: 118px;
+}
+
+.headshot img {
+  border-radius: 9999px;
+   -webkit-filter: grayscale(100%);
+  border: 2px solid #fff;
+}
+
+.party-name {
+	/* color: #C0A3DE;*/
+}
+
+.styled-block {
+  border-radius: 0px 0px 8px 8px;
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding: 12px 0px 12px 0px;
+}
+
+#chevron1 {
+	
+}
+
+#blurb-on-topic1 {
+	
+}
+
+.blurb-on-topic {
+	display: none;
+  border-radius: 0px 0px 8px 8px;
+  background-color: #fff;
+  padding: 12px 0px 12px 0px;
+}
+
+.blurb-on-topic p {
+  padding: 0px 12px 0px 12px;
+  margin: 0px 12px 0px 12px;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+  color: #764299;
+  letter-spacing: 1px;
+}
+
+.blurb-on-topic a {
+	color: #C0A3DE;
+}
+
+.yes {
+  background-color: #72be49;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  padding-top: 8px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.no {
+  background-color: #ea5e5b;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  padding-top: 8px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.undecided {
+  background-color: #dddee0;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  color: #434343;
+  padding-top: 8px;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.like {
+  background-color: #72be49;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  padding-top: 8px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;  
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.dislike {
+  background-color: #ea5e5b;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  padding-top: 8px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;  
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.separator {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.scale {
+  height: 25px;
+  width: 25px;
+}
+
+.logo {
+  margin-top: 10px;
+  background-image: url(../img/lgbtwhip_logo.png);
+  width: 80px;
+  max-width: 100%;
+  height: 61px;
+  background-size: 80px 61px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.separator-2 {
+  width: 42%;
+  height: 1px;
+  background-color: rgba(255,255,255,0.1);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.question {
+  background-color: #9768BB;
+  border-radius: 8px 8px 0px 0px;
+  padding: 8px 0px 4px 0px;
+}
+
+
+.logo {
+	background-image: url(../img/friendlylogo.png);
+	background-repeat: no-repeat;
+	background-size: 350px 268px;
+	height: 268px;
+	width: 350px;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.centered {
+	text-align: center;
+}
+
+.name {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	font-size: 50px;
+	color: #fff;
+	margin-top: 5px;
+	margin-bottom: 25px;
+}
+
+.description {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	color: #fff;
+	letter-spacing: 1px;
+	padding-bottom: 5px;
+}
+
+.constituency {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	font-size: 40px;
+	color: #fff;
+	margin-bottom: 25px;
+}
+
+input.rounded {
+	border-radius: 8px;
+	background-color: #A67FD1;
+	border: #A67FD1;
+	text-align: center;
+	color:#fff;
+	font-family: 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	font-size: 1rem;
+}
+
+input.rounded:focus {
+	border-radius: 8px;
+	background-color: #9269BF;
+	border: #A67FD1;
+	box-shadow: 0px 0px 4px rgba(226, 217, 228, 0.48);
+	text-align: center;
+	color: #fff;
+	font-size: 1rem;
+}
+
+input.roundedmax {
+	border-radius: 50px;
+	background-color: #A67FD1;
+	border: #A67FD1;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	color:#fff;
+	font-family: 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	font-size: 1rem;
+}
+
+input.roundedmax:focus {
+	background-color: #9269BF;
+	box-shadow: 0px 0px 4px rgba(226, 217, 228, 0.48);
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #fff;
+}
+
+.magnifyingglass {
+	background-image: url(../foundation-icons/svgs/fi-magnifying-glass.svg);
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	color: #ffffff;
+	cursor: pointer;
+	display: block;
+	height: 16px;
+	width: 16px;
+	z-index: 2;
+}
+
+a {
+	color: #fff;
+}
+
+a:hover {
+	color: #A67FD1;
+}
+
+.buttan {
+	background-color: #3ab4bc;
+	border-radius: 8px;
+	padding:8px;
+	font-family: 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	color: #FFF;
+	border-color: #D86064;
+	border-bottom: 3px solid #1f8289;
+
+}
+
+.buttan:hover, .buttan:focus {
+	background-color: #1d8f97;
+	border-radius: 8px;
+	padding:8px;
+	font-family: 'Helvetica', 'Open Sans', sans-serif;
+	font-weight: 100;
+	color: #FFF;
+	border-color: #D86064;
+	border-bottom: 3px solid #097178;
+
+}
+
+.footer {
+	padding-top: 10px;
+	padding-bottom: 40px;
+	color: #fff; 
+}
+
+#whatislgbt {
+	cursor: pointer;
+	letter-spacing: 1px;
+	font-weight: 400;
+	padding-top: 10px;
+}
+
+#lgbtdesc {
+	display: none;
+	text-align: justify;
+}
+
+#wip {
+	display: none;
+}
+
+.pastpromise {
+	background-color: #C0A3DE;
+	/* padding: 10px 0px 10px 0px; */
+}
+
+.labelpastpromise {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Open Sans', sans-serif;
+	font-size: 10;
+	font-weight: 100;
+	color: #764299;
+	letter-spacing: 1px;
+	display: inline;
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.icon {
+	font-size: 20px;
+}
+
+.hovered {
+	color: #C0A3DE;
+}
+
+.portcullis-badge {
+	background-color: #764299;
+	border-radius: 9999px;
+	border: 2px solid #fff;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+}
