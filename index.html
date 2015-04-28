@@ -9,10 +9,20 @@
     <link rel="stylesheet" href="css/foundation-icons.css" />
     <link rel="stylesheet" href="css/panels.css" />
     <script src="js/vendor/modernizr.js"></script>
-      <script src="js/angular.js"></script>
+    <script src="js/lgbtw.settings.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/lgbtw.ng.app.js"></script>
+    <script src="js/lgbtw.ng.postcodeController.js"></script>
       
-      <script src="js/lgbtw.ng.app.js"></script>
+      <style>
+          .postcodeError {
+              border: 1px solid #cc0000 !important;
+          }
 
+          .postcodeFine {
+              border: 1px solid #956cb7 !important;
+          }
+      </style>
   </head>
   <body>
 	<div class="logo">
@@ -25,10 +35,10 @@
 						<div class="large-12 columns">
 							<div class="row collapse postfix-round">
 								<div class="small-9 columns">
-									<input type="text" placeholder="Search your postcode">
+                                    <input type="text" placeholder="Search your postcode" data-ng-model="postcode" data-ng-class="validationClass" data-ng-enter="submitPostcode()">
 								</div>
 								<div class="small-3 columns">
-									<a href="#" class="button postfix"><i class="fi-magnifying-glass icon"></i></a>
+                                    <a href="#" class="button postfix" data-ng-click="submitPostcode()"><i class="fi-magnifying-glass icon"></i></a>
 								</div>
 								<p class="description centered">or browse by <a href="#" target="_blank"><b>region</b></a> or <a href="#" target="_blank"><b>constituency</b></a> </p>
 							</div>
