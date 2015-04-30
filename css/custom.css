@@ -353,6 +353,10 @@ a:hover {
 	color: #A67FD1;
 }
 
+.noLinkAvailable {
+    color: #A67FD1;
+}
+
 .buttan {
 	background-color: #3ab4bc;
 	border-radius: 8px;
@@ -437,4 +441,25 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	position: absolute;
+}
+
+/*****************************
+ *  CJW-ADDED for NG
+ *****************************/
+.postcodeError {
+    border: 1px solid #cc0000 !important;
+}
+
+.error {
+	background-color:#fb9999;
+	border-radius: 8px;
+	font-family: 'Helvetica', 'Open Sans', sans-serif;
+	color: #ffffff;
+	padding: 4px;
+    max-width: 440px;
+    margin-bottom: 30px;
+}
+
+.postcodeFine {
+    border: 1px solid #956cb7 !important;
 }

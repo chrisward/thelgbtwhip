@@ -4,16 +4,18 @@ app.controller('postcodeController', [
     $scope.postcode = "";
 
     $scope.validationClass = "postcodeFine";
+    $scope.showError = false;
 
     $scope.processFailedResponse = function(data, status) {
         $scope.validationClass = "postcodeError";
+        $scope.showError = true;
     };
 
     $scope.submitPostcode = function () {
         postcodeDataService.getConstituencyByPostcode($scope.postcode)
         .success(function (data) {
                 $scope.validationClass = "postcodeFine";
-                console.log(data);
+                location.href = lgbtw.settings.lgbtwPickCandsUrl + $scope.postcode;
             })
         .error(function (data, status) {
             $scope.processFailedResponse(data, status);

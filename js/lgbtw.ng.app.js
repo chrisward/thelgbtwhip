@@ -6,6 +6,11 @@ app.service('postcodeDataService', ['$http', function ($http) {
     };
 }]);
 
+app.service('candidatesDataService', ['$http', function ($http) {
+    
+
+}]);
+
 app.directive('ngEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {

@@ -14,38 +14,37 @@
     <script src="js/lgbtw.ng.app.js"></script>
     <script src="js/lgbtw.ng.postcodeController.js"></script>
       
-      <style>
-          .postcodeError {
-              border: 1px solid #cc0000 !important;
-          }
-
-          .postcodeFine {
-              border: 1px solid #956cb7 !important;
-          }
-      </style>
   </head>
   <body>
 	<div class="logo">
 	</div>
 	<p class="name centered">THE LGBT WHIP
 	</p>
-		<div class="row" data-ng-controller="postcodeController">
-				<div class="large-6 medium-6 large-centered medium-centered columns">
-					<form>
-						<div class="large-12 columns">
-							<div class="row collapse postfix-round">
-								<div class="small-9 columns">
-                                    <input type="text" placeholder="Search your postcode" data-ng-model="postcode" data-ng-class="validationClass" data-ng-enter="submitPostcode()">
-								</div>
-								<div class="small-3 columns">
-                                    <a href="#" class="button postfix" data-ng-click="submitPostcode()"><i class="fi-magnifying-glass icon"></i></a>
-								</div>
-								<p class="description centered">or browse by <a href="#" target="_blank"><b>region</b></a> or <a href="#" target="_blank"><b>constituency</b></a> </p>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
+      <div class="row" data-ng-controller="postcodeController">
+<!--<div data-alert class="large-6 medium-6 large-centered medium-centered error centered">-->
+          <div data-alert class="large-6 medium-6 large-centered medium-centered columns error centered" data-ng-show="validationClass === 'postcodeError' && showError">
+              We didn't recognise that postcode. Please try again!
+              <a href="#" class="close" data-ng-cloak data-ng-click="showError = false">&times;</a>
+          </div>
+
+          <div class="large-6 medium-6 large-centered medium-centered columns">
+
+              <form>
+                  <div class="large-12 columns">
+
+                      <div class="row collapse postfix-round">
+                          <div class="small-9 columns">
+                              <input type="text" placeholder="Search your postcode" data-ng-model="postcode" data-ng-class="validationClass" data-ng-enter="submitPostcode()">
+                          </div>
+                          <div class="small-3 columns">
+                              <a href="#" class="button postfix" data-ng-click="submitPostcode()"><i class="fi-magnifying-glass icon"></i></a>
+                          </div>
+                          <p class="description centered">or browse by <a href="#" target="_blank"><b>region</b></a> or <a href="#" target="_blank"><b>constituency</b></a> </p>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
 	
 		<div class="medium-6 large-6 medium-centered large-centered columns">
 			<p id="whatislgbt" class="description centered">What is THE LGBT WHIP?

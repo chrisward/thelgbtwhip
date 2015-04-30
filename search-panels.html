@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+﻿<!doctype html>
+<html class="no-js" lang="en" data-ng-app="lgbtWhip">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,21 @@
 		<link rel="stylesheet" href="css/panels.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 		<script src="js/vendor/modernizr.js"></script>
+        <script src="js/lgbtw.settings.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/lgbtw.ng.app.js"></script>
+        <script src="js/lgbtw.ng.postcodeController.js"></script>
+        <script src="js/lgbtw.ng.selectCandidatesController.js"></script>
+        
+	    <script>
+            // Need postcode and it needs to be valid
+            if (lgbtw.urlParams.postcode === null) {
+                location.href = "index.html";
+            }
+    	</script>
 	</head>
 	<body>
-		<div class="fixed purple-nav">
+		<div class="fixed purple-nav" data-ng-controller="postcodeController">
 			<div class="panel-logo"></div>
 			<div class="row">
 				<div class="large-6 medium-6 large-centered medium-centered columns">
@@ -20,10 +32,14 @@
 						<div class="large-12 columns">
 							<div class="row collapse postfix-round">
 								<div class="small-9 columns">
-									<input type="text" placeholder="Enter postcode">
+                                    <div data-alert class="large-6 medium-6 large-centered medium-centered columns error centered" data-ng-show="validationClass === 'postcodeError' && showError">
+                                        We didn't recognise that postcode. Please try again!
+                                        <a href="#" class="close" data-ng-cloak data-ng-click="showError = false">&times;</a>
+                                    </div>
+                                    <input type="text" placeholder="Enter postcode" data-ng-model="postcode" data-ng-class="validationClass" data-ng-enter="submitPostcode()">
 								</div>
 								<div class="small-3 columns">
-									<a href="#" class="button postfix"><i class="fi-magnifying-glass icon"></i></a>
+                                    <a href="#" class="button postfix" data-ng-click="submitPostcode()"><i class="fi-magnifying-glass icon"></i></a>
 								</div>
 							</div>
 						</div>
@@ -33,126 +49,63 @@
 		</div>
 		<div class="spacer">
 		</div>
-		<div><p class="constituency centered">SW7 Constituency</p></div>
-		<div class="row center">
-			<div class="large-4 medium-4 columns">
-				<div class="panel-wide">
-					<div class="headshot">
-						<img src="img/a1.png" alt="photo">
-					</div>
-					<h1>Peter Bone</h1>
-					<h2 class="party-name"><img src="party-logos/libdem_cropped.png" width="18px" height="18px" alt="party-logo" /> Conservative</h2>
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="panel-separator">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-social-twitter icon"></i><p class="panel-links">Twitter</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-link icon"></i><p class="panel-links">Website</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-web icon"></i><p class="panel-links">Wikipedia</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-mail icon"></i><p class="panel-links">Email</p></a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="panel-separator">
-							</div>
-							<input id="checkbox1" type="checkbox"><label for="checkbox1">Select candidate</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="large-4 medium-4 columns">
-				<div class="panel-wide">
-					<div class="headshot">
-						<img src="img/a2.jpeg" alt="photo">
-					</div>
-					<h1>Harvey Milk</h1>
-					<h2 class="party-name"><img src="party-logos/labour_cropped.png" width="18px" height="18px" alt="party-logo" /> Labour</h2>
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="panel-separator">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-social-twitter icon"></i><p class="panel-links">Twitter</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-link icon"></i><p class="panel-links">Website</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-web icon"></i><p class="panel-links">Wikipedia</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-mail icon"></i><p class="panel-links">Email</p></a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="panel-separator">
-							</div>
-							<input id="checkbox2" type="checkbox"><label for="checkbox2">Select candidate</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="large-4 medium-4 columns">
-				<div class="panel-wide">
-					<div class="headshot">
-						<img src="img/a3.png" alt="photo">
-					</div>
-					<h1>Richard Garvie</h1>
-					<h2 class="party-name"><img src="party-logos/ukip_cropped.png" width="18px" height="18px" alt="party-logo"> Liberal Democrat</h2>
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="panel-separator">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-social-twitter icon"></i><p class="panel-links">Twitter</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-link icon"></i><p class="panel-links">Website</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-web icon"></i><p class="panel-links">Wikipedia</p></a>
-						</div>
-						<div class="small-3 columns">
-							<a href="#"><i class="fi-mail icon"></i><p class="panel-links">Email</p></a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="panel-separator">
-							</div>
-							<input id="checkbox3" type="checkbox"><label for="checkbox3">Select candidate</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="panel-separator">
-			</div>
-		</div>
-		<div class="row">
-			<div class="large-6 large-centered medium-6 medium-centered small-9 small-centered center columns footer-button">
-				<a href="#"><b>Confirm selection</b></a>
-			</div>
-		</div>
+        
+        <div data-ng-controller="selectCandidatesController" data-ng-cloak data-ng-show="postcodeValidated">
+            <div><p class="constituency centered">{{formattedPostcode}} {{constituencyData.name}}</p></div>
+
+            <div class="row center" data-ng-repeat="candidateRow in candidateModel track by $index">
+                <div class="large-4 medium-4 columns" data-ng-repeat="candidate in candidateModel[$index]">
+                    <div class="panel-wide">
+                        <div class="headshot">
+                            <img data-ng-src="{{candidate.photo}}" alt="photo">
+                        </div>
+                        <h1>{{candidate.name}}</h1>
+                        <h2 class="party-name"><img data-ng-src="{{getPartyLogoSrc(candidate.party.id)}}" width="18px" height="18px" alt="party-logo" /> {{candidate.party.name}}</h2>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="panel-separator">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-3 columns">
+                                <a data-ng-if="candidate.twitter !== undefined" href="http://www.twitter.com/{{candidate.twitter}}"><i class="fi-social-twitter icon"></i><p class="panel-links">Twitter</p></a>
+                                <span data-ng-if="candidate.twitter === undefined" class="noLinkAvailable"><i class="fi-social-twitter icon"></i><p class="panel-links">Twitter</p></span>
+                            </div>
+                            <div class="small-3 columns">
+                                <a data-ng-if="candidate.website !== undefined" href="{{candidate.website}}"><i class="fi-link icon"></i><p class="panel-links">Website</p></a>
+                                <span data-ng-if="candidate.website === undefined" class="noLinkAvailable"><i class="fi-link icon"></i><p class="panel-links">Website</p></span>
+                            </div>
+                            <div class="small-3 columns">
+                                <a data-ng-if="candidate.wikipedia !== undefined" href="{{candidate.wikipedia}}"><i class="fi-web icon"></i><p class="panel-links">Wikipedia</p></a>
+                                <span data-ng-if="candidate.wikipedia === undefined" class="noLinkAvailable"><i class="fi-web icon"></i><p class="panel-links">Wikipedia</p></span>
+                            </div>
+                            <div class="small-3 columns">
+                                <a data-ng-show="candidate.email !== undefined" href="mailto:{{candidate.email}}"><i class="fi-mail icon"></i><p class="panel-links">Email</p></a>
+                                <span data-ng-show="candidate.email === undefined" class="noLinkAvailable"><i class="fi-mail icon"></i><p class="panel-links">Email</p></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="panel-separator">
+                                </div>
+                                <input id="checkbox1" type="checkbox"><label for="checkbox1">Select candidate</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="panel-separator">
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6 large-centered medium-6 medium-centered small-9 small-centered center columns footer-button">
+                    <a href="#"><b>Confirm selection</b></a>
+                </div>
+            </div>
+        </div>
 		<div class="row">
 			<div class="panel-separator">
 			</div>
@@ -181,7 +134,8 @@
 		<script src="js/foundation/foundation.magellan.js"></script>
 		<script src="js/foundation.min.js"></script>
 		<script>
-			$(document).foundation();
+		    $(document).foundation();
+
 		</script>
 	</body>
 </html>
