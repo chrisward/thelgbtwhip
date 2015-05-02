@@ -7,6 +7,10 @@ app.controller('selectCandidatesController', [
     $scope.constituencyData = null;
     $scope.candidateModel = null;
 
+    $scope.selectedCandidates = [];
+
+    $scope.resultsUrl = "";
+
     function compare(a, b) {
         if (a.name < b.name)
             return -1;
@@ -17,7 +21,6 @@ app.controller('selectCandidatesController', [
 
     postcodeDataService.getConstituencyByPostcode($scope.postcode)
         .success(function (data) {
-            //data.candidates.sort(compare);
             $scope.postcodeValidated = true;
             $scope.constituencyData = data;
             $scope.populateCandidateModel(data);
@@ -26,6 +29,28 @@ app.controller('selectCandidatesController', [
         .error(function (data, status) {
         location.href = "index.html";
         });
+
+    $scope.selectCandidate = function (candidateId) {
+        // First check if the candidate is already in there. If so, remove.
+        var currentIndex = $scope.selectedCandidates.indexOf(candidateId);
+        if (currentIndex != -1) {
+            $scope.selectedCandidates.splice(currentIndex, 1);
+        }
+        else if ($scope.selectedCandidates.length < 3) {
+            $scope.selectedCandidates.push(candidateId);
+        }
+
+        if ($scope.selectedCandidates.length > 1) {
+            $scope.resultsUrl = "/search-results-select-master.html?postcode=" + $scope.formattedPostcode;
+            for (var i = 0; i < $scope.selectedCandidates.length; i++) {
+                $scope.resultsUrl += "&c" + (i + 1) + "=" + $scope.selectedCandidates[i];
+            }
+        } else {
+            $scope.resultsUrl = "";
+        }
+
+        console.log($scope.selectedCandidates);
+    };
 
     $scope.populateCandidateModel = function(data) {
         if ($scope.constituencyData === null) {
@@ -60,7 +85,6 @@ app.controller('selectCandidatesController', [
     };
 
     $scope.getPartyLogoSrc = function (partyId) {
-        console.log("Party id: " + partyId);
         switch(partyId) {
             case 52:
             {

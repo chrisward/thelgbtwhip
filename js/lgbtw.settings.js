@@ -12,5 +12,8 @@ function getURLParameter(name) {
 }
 
 lgbtw.urlParams = {
-    postcode: getURLParameter('postcode')
+    postcode: getURLParameter('postcode'),
+    cand1: getURLParameter('c1'),
+    cand2: getURLParameter('c2'),
+    cand3: getURLParameter('c3')
 }

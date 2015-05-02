@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+﻿<!doctype html>
+<html class="no-js" lang="en" data-ng-app="lgbtWhip">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +9,25 @@
     <link rel="stylesheet" href="css/custom.css" />
    	<link rel="stylesheet" href="css/panels.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <script src="js/vendor/modernizr.js"></script>
+      <script src="js/vendor/modernizr.js"></script>
+      <script src="js/lgbtw.settings.js"></script>
+      <script src="js/angular.js"></script>
+      <script src="js/lgbtw.ng.app.js"></script>
+      <script src="js/lgbtw.ng.postcodeController.js"></script>
+      <script src="js/lgbtw.ng.selectCandidatesController.js"></script>
+      <script src="js/lgbtw.ng.resultsController.js"></script>
+
+      <script>
+          // Need postcode and it needs to be valid
+          if (lgbtw.urlParams.postcode === null ||
+              lgbtw.urlParams.cand1 === null ||
+              lgbtw.urlParams.cand2 === null) {
+              location.href = " index.html";
+              }
+      </script>
+
   </head>
-  	<body>
+  	<body data-ng-controller="resultsController">
   		<div class="fixed purple-nav">
 			<div class="panel-logo"></div>
 			<div class="row">
@@ -131,21 +147,18 @@
 
     <div class="row">
       <div class="question">
-	        <h2>Reduce age of consent for homosexual acts to 16 <img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" id="chevron1" style="width:3rem; height:2rem"/></h2>
+	        <h2>Reduce age of consent for homosexual acts to 16 <img src="/img/chevron.svg" class="fi-chevron chevron right" id="chevron1" style="width:3rem; height:2rem"/></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -175,21 +188,18 @@
     </div>
     <div class="row">
       <div class="question">
-        <h2>Introduction of civil partnerships <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>Introduction of civil partnerships <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -213,21 +223,18 @@
     </div>
     <div class="row">
       <div class="question">
-        <h2>Repeal of Section 28 <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>Repeal of Section 28 <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -250,21 +257,18 @@
     </div>
     <div class="row">
       <div class="question">
-        <h2>Equality Act (Sexual Orientation) Regulations <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>Equality Act (Sexual Orientation) Regulations <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -287,21 +291,18 @@
     </div>
     <div class="row">
       <div class="question">
-        <h2>IVF treatment for lesbian couples <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>IVF treatment for lesbian couples <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -324,21 +325,18 @@
     </div>
     <div class="row">
       <div class="question">    
-        <h2>Marriage (Same-sex Couples) Bill <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>Marriage (Same-sex Couples) Bill <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -361,21 +359,18 @@
     </div>
     <div class="row">
       <div class="question">
-        <h2>Repeal of the 12 month deferral of men who have sex with men (MSM) from donating blood <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>Repeal of the 12 month deferral of men who have sex with men (MSM) from donating blood <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -398,21 +393,18 @@
     </div>
     <div class="row">
       <div class="question">    
-	    <h2>Asylum in the UK for LGBT+ people fleeing persecution  <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+	    <h2>Asylum in the UK for LGBT+ people fleeing persecution  <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>
@@ -435,21 +427,18 @@
     </div>
     <div class="row">
       <div class="question">
-        <h2>Recognition of trans* identities in all public services <a href="#"><img src="../LGBT-whip-website/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
+        <h2>Recognition of trans* identities in all public services <a href="#"><img src="/img/chevron.svg" class="fi-chevron chevron right" style="width:3rem; height:2rem"/></a></h2>
       </div>
       <div class="large-12 columns pastpromise hide-for-small">
 	     <div class="row">
 		    <div class="large-4 small-4 columns center">
-		        <p class="labelpastpromise">PAST</p>
-		        <p class="labelpastpromise">PROMISE</p>
+		        <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 		  <div class="large-4 small-4 columns center">
-	            <p class="labelpastpromise">PAST</p>
-	            <p class="labelpastpromise">PROMISE</p>
+	            <p class="labelpastpromise">PAST / PROMISE</p>
           </div>
 	     </div>    
       </div>

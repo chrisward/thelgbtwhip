@@ -7,7 +7,9 @@ app.service('postcodeDataService', ['$http', function ($http) {
 }]);
 
 app.service('candidatesDataService', ['$http', function ($http) {
-    
+    this.getCandidateById = function (id) {
+        return $http.get(lgbtw.settings.apiBaseUrl + '/candidate?id=' + id);
+    };
 
 }]);
 

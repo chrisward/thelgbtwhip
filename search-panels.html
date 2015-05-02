@@ -52,11 +52,14 @@
         
         <div data-ng-controller="selectCandidatesController" data-ng-cloak data-ng-show="postcodeValidated">
             <div><p class="constituency centered">{{formattedPostcode}} {{constituencyData.name}}</p></div>
-
+            <div><p class="centered" style="color: #ffffff">Select a maximum of 3 candidates to compare answers.</p></div>
             <div class="row center" data-ng-repeat="candidateRow in candidateModel track by $index">
                 <div class="large-4 medium-4 columns" data-ng-repeat="candidate in candidateModel[$index]">
                     <div class="panel-wide">
                         <div class="headshot">
+                            <div class="portcullis-badge" data-ng-if="false">
+                                <img src="img/portcullis.png" style="height: 30px; width: 30px">
+                            </div>
                             <img data-ng-src="{{candidate.photo}}" alt="photo">
                         </div>
                         <h1>{{candidate.name}}</h1>
@@ -89,7 +92,7 @@
                             <div class="large-12 columns">
                                 <div class="panel-separator">
                                 </div>
-                                <input id="checkbox1" type="checkbox"><label for="checkbox1">Select candidate</label>
+                                <input id="checkbox1" data-ng-disabled="selectedCandidates.length >= 3 && selectedCandidates.indexOf(candidate.id) === -1" type="checkbox" data-ng-click="selectCandidate(candidate.id)"><label for="checkbox1">Select candidate</label>
                             </div>
                         </div>
                     </div>
@@ -102,7 +105,7 @@
             </div>
             <div class="row">
                 <div class="large-6 large-centered medium-6 medium-centered small-9 small-centered center columns footer-button">
-                    <a href="#"><b>Confirm selection</b></a>
+                    <a href="{{resultsUrl}}"><b>Confirm selection</b></a>
                 </div>
             </div>
         </div>
